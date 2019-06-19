@@ -9,7 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonTransformation.Test", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{958B5BAA-B817-4640-B4E6-DEEDB6DEC125}"
 	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
+		..\.appveyor.yml = ..\.appveyor.yml
+		..\.gitignore = ..\.gitignore
+		..\build\build.ps1 = ..\build\build.ps1
+		..\readme.md = ..\readme.md
 	EndProjectSection
 EndProject
 Global

@@ -1,7 +1,6 @@
 {
     "templates": {
         "t1": {
-            "name": { "$useParameter": "parameter1" },
             "tp1": 123,
             "tp2": "Hello world"
         }
@@ -9,10 +8,7 @@
     "jobs": {
         "job1": {
             "job1Prop1": 1235,
-            "$merge": "$.templates.t1",
-            "$setParameters": {
-                "parameter1": "My Job 1"
-            }
+            "$merge": "$.templates.t1"
         }
     }
 }

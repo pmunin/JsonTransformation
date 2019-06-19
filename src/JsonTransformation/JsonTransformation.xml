@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JsonTransformation</name>
+    </assembly>
+    <members>
+        <member name="T:JsonTransformation.JsonTransformationService">
+            <summary>
+            Service that transforms source JToken using registered transformers
+            </summary>
+        </member>
+        <member name="P:JsonTransformation.JsonTransformationService.Transformers">
+            <summary>
+            Array of registered transformers
+            </summary>
+        </member>
+        <member name="M:JsonTransformation.JsonTransformationService.Transform(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Transforms specified jtoken using registered transformers recursively.
+            Current implementation actually MUTATES source object, so keep it in mind
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JsonTransformation.ICanTransformJson">
+            <summary>
+            Knows how to transform jtoken
+            </summary>
+        </member>
+        <member name="M:JsonTransformation.ICanTransformJson.TransformJson(JsonTransformation.TransformJsonArgs)">
+            <summary>
+            Returns true if some transformation actually was performed by this transformer
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JsonTransformation.TransformJsonArgs">
+            <summary>
+            Transformation arguments
+            </summary>
+        </member>
+        <member name="M:JsonTransformation.TransformJsonArgs.#ctor(JsonTransformation.TransformJsonArgs)">
+            <summary>
+            Creates instance, allows to specify parent args
+            </summary>
+            <param name="parent"></param>
+        </member>
+        <member name="P:JsonTransformation.TransformJsonArgs.Source">
+            <summary>
+            Current JToken being transformed
+            </summary>
+        </member>
+        <member name="P:JsonTransformation.TransformJsonArgs.Parent">
+            <summary>
+            Transformation path can be calculated from here
+            </summary>
+        </member>
+        <member name="P:JsonTransformation.TransformJsonArgs.Context">
+            <summary>
+            Context shared within one transformation session (service.Transform(...))
+            </summary>
+        </member>
+    </members>
+</doc>

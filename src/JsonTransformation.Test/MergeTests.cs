@@ -19,7 +19,8 @@ namespace JsonTransformation.Test
 
             var res = svc.Transform(job1);
 
-            
+            Assert.True(res["job1Prop1"]?.Value<int>() == 1235);
+            Assert.True(res["tp2"]?.Value<string>() == "Hello world");
         }
     }
 }

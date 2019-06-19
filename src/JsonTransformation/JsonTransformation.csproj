@@ -1,7 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>pmunin</Authors>
+    <IsPackable>true</IsPackable>
+    <IsTestProject>false</IsTestProject>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/pmunin/JsonTransformation</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/pmunin/JsonTransformation</PackageProjectUrl>
+    <Description>Extendable recursive transformation of Json (Newtonsoft.Json.Linq.JToken)</Description>
+    <Version>0.0.1</Version>
+    <AssemblyVersion>0.0.0.1</AssemblyVersion>
+    <FileVersion>0.0.0.1</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>JsonTransformation.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
