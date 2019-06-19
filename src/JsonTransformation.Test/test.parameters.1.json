@@ -1,0 +1,18 @@
+{
+    "templates": {
+        "t1": {
+            "name": { "$useParameter": "jobName" },
+            "tp1": 123,
+            "tp2": "Hello world"
+        }
+    },
+    "jobs": {
+        "job1": {
+            "job1Prop1": 1235,
+            "$merge": "$.templates.t1",
+            "$setParameters": {
+                "jobName": "My Job 1"
+            }
+        }
+    }
+}

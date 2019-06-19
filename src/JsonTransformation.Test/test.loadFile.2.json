@@ -1,0 +1,4 @@
+{
+    "myFile2Prop1": 123,
+    "nestedFile3": {"$file": "test.loadFile.3.json"}
+}
