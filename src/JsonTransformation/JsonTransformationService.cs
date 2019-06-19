@@ -16,13 +16,14 @@ namespace JsonTransformation
 
         public JToken Transform(JToken source)
         {
+            if (source == null) throw new ArgumentNullException(nameof(source));
             var transformers = (Transformers ?? Array.Empty<ICanTransformJson>());
             var root = source.Root;
 
 
             void TransformDfs(TransformJsonArgs args)
             {
-                //try to transform until there is nothing left to transform
+                //first we go deeper and then try to tranform current source, if something was transformed, we go deep again, since children might have changed
                 do
                 {
                     if (args.Source == null||args.Source.Root!=root) break;
