@@ -1,0 +1,21 @@
+name: Build .NET Core
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.2.108
+    - name: Build with dotnet
+      run: |
+        dotnet build .\src -c Release -o "..\..\Output"
+        dotnet test .\src -o "..\..\Output"
+        dotnet pack ".\src\JsonTransformation\JsonTransformation.csproj" -c Release -o "..\..\Output"
+
